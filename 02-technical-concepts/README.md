@@ -1,49 +1,20 @@
-### CS Fundamentals 101
+# Databases
 
 > Just because you can do it with a language/framework, does not mean you should.
 
-#### Scoring
+#### JSON
 
-* [https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
+Before we dive into databases, let's understand JSON, as this will drive a lot of decisions on what database to choose and why. Javascript Object Notation \(JSON\) is unstructured, flexible and readable by humans. Basically, you can dump data into the database however it comes, without having to adapt it to any specialized database language \(like SQL\). You can nest fields in a data record, or add different fields to individual data records as and when you need.
 
-# More Ideas
+All of this makes an important step towards user-friendly computing. Today many prefer JSON over XML. JSON data format is used by a number of NoSQL data stores.
 
-```
-Orchestration
-RWD vs Adaptive vs Mobile Optimized
+JSON does, however, lack indexing - and JSONB format was created to tackle this problem. JSONB stores data in binary format, instead of a simple JSON blob. Data input is a bit slower, but processing becomes a lot faster since the data doesn't need to be reparsed. 
 
-https://12factor.net/
-```
+#### Postgres
 
-#### Draft
+Able to handle SQL and NoSQL data. Now offers enhanced JSON storage capabilities.
 
-```
-Unit Testing
-------------
-https://www.toptal.com/java/a-guide-to-everyday-mockito
+#### MongoDB
 
-Mocks - used as a replacement for a dependency
-Spies - creating a spy requires an instance to spy on. It’s spying on a real object.
-Stubs
-
-The need to use a spy to partially mock a class is an indicator that a class is doing too much, thus violating
-	the single responsibility principle.
-
-Mockito
-	create a mock
-	tell Mockito what to do when specific methods are called on it
-	use the mock instance in your test instead of the real thing
-After the test
-	query the mock to see what specific methods were called
-	or check the side effects in the form of changed state
-
-import static org.mockito.Mockito.*;
-
-Out of the box, Mockito cannot mock final classes and final or static methods.
-If you really need it, Mockito 2 provides the experimental MockMaker plugin.
-Also note that the methods equals() and hashCode() cannot be mocked.
-
-```
-
-
+Designed as a native JSON database
 
